@@ -1,0 +1,18 @@
+import java.util.*;
+public class Wordcapitalization {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        if(Character.isUpperCase(s.charAt(0))){
+            System.out.println(s);
+            return;
+        }
+        char ch[]=s.toCharArray();
+        String ans="";
+        ans+=Character.toUpperCase(ch[0]);
+        for(int i=1;i<ch.length;i++){
+            ans+=ch[i];
+        }
+        System.out.println(ans);
+    }
+}

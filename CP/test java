@@ -1,0 +1,7 @@
+public class test{
+    public static void main(String[] args) {
+        boolean odd=1;
+        if(odd)System.out.println("Odd");
+        else System.out.println("Even");
+    }
+}

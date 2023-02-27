@@ -1,0 +1,19 @@
+import java.util.*;
+public class Boyorgirl {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int n=s.length();
+        int distinct=0;
+        Set<Character>set=new HashSet<>();
+        for(int i=0;i<n;i++){
+            if(set.contains(s.charAt(i))){
+                distinct--;
+            }
+            distinct++;
+            set.add(s.charAt(i));
+        }
+       if(distinct%2!=0)System.out.println("IGNORE HIM!");
+       else System.out.println("CHAT WITH HER!");
+    }
+}

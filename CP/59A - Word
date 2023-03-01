@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Word {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int countCapital=0,countSmall=0;
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)>=65 && s.charAt(i)<=90)countCapital++;
+            else countSmall++;
+        }
+        String ans="";
+        if(countCapital>countSmall){
+            System.out.println(s.toUpperCase());
+        }else{
+            System.out.println(s.toLowerCase());
+        }
+    }
+}

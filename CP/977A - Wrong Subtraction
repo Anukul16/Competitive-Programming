@@ -1,0 +1,18 @@
+import java.util.*;
+public class Wrongsubtraction {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(),k=sc.nextInt();
+        int num=n;
+        int count=0;
+        while(k-->0){
+            int rem=n%10;
+            if(rem!=0){
+                n--;
+            }else{
+                n/=10;
+            }
+        }
+        System.out.println(n);
+    }
+}

@@ -1,0 +1,33 @@
+import java.util.*;
+public class Capslock {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        int cSmall=0;
+        boolean firstIndex=false;
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)>=97 && s.charAt(i)<=122)
+            {
+                if(s.charAt(0)==s.charAt(i))firstIndex=true;
+                cSmall++;
+            }
+        }
+        if(firstIndex==true && cSmall==1)
+        {
+            String ans="";
+            ans+=Character.toUpperCase(s.charAt(0));
+            for(int i=1;i<s.length();i++)
+            {
+                ans+=Character.toLowerCase(s.charAt(i));
+            }
+            System.out.println(ans);
+        }else if(cSmall==0)
+        {
+            System.out.println(s.toLowerCase());
+        }else
+        {
+            System.out.println(s);
+        }
+    }
+}

@@ -1,0 +1,15 @@
+import java.util.*;
+public class Dubstep {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        String dummy="WUB";
+        String arr[]=s.split(dummy);
+        String ans="";
+        for(int i=0;i<arr.length;i++){
+            if(i!=arr.length-1)ans+=arr[i]+" ";
+            else ans+=arr[i];
+        }
+        System.out.println(ans);
+    }
+}

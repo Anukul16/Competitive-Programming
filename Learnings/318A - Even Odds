@@ -1,0 +1,18 @@
+import java.util.*;
+public class Evenodds {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        long n = input.nextLong();
+        long k = input.nextLong();
+
+        // if k is less than or equal to the number of odd integers from 1 to n
+        if (k <= (n + 1) / 2) {
+            System.out.println(2*k - 1); // the k-th odd integer is at position 2k-1
+        } 
+        // if k is greater than the number of odd integers from 1 to n
+        else {
+            k -= (n + 1) / 2; // adjust k to start counting from the first even integer
+            System.out.println(2*k); // the (k - number of odd integers)th even integer is at position 2(k - number of odd integers)
+        }
+    }
+}

@@ -1,0 +1,24 @@
+import java.util.*;
+public class Chewbacca {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        long x=sc.nextLong();
+        sc.nextLine();
+        String s=String.valueOf(x);
+        StringBuilder sb=new StringBuilder();
+        for(int i=0;i<s.length();i++){
+            int digit=Character.getNumericValue(s.charAt(i));
+            if(digit>=5){
+                digit=9-digit;
+            }
+            sb.append(digit);
+        }
+        String res=sb.toString();
+        if(res.charAt(0)=='0'){
+            res='9'+res.substring(1);
+        }
+        long ans=Long.valueOf(res);
+        System.out.println(ans);
+        
+    }
+}

@@ -1,0 +1,12 @@
+import java.util.*;
+public class Softdrinking {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(),k=sc.nextInt(),l=sc.nextInt(),c=sc.nextInt(),d=sc.nextInt(),p=sc.nextInt(),nl=sc.nextInt(),np=sc.nextInt();
+        int drinkNeed=(k*l)/nl;
+        int limesNeed=c*d;
+        int saltNeed=p/np;
+        int ans=Math.min(drinkNeed,Math.min(limesNeed,saltNeed));
+        System.out.println(ans/n);
+    }
+}

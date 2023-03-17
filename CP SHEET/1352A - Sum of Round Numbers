@@ -1,0 +1,23 @@
+import java.util.*;
+public class Sumofround {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+            int n=sc.nextInt();
+            List<Integer>roundOffNum=new ArrayList<>();
+            int count=0;
+            while(n>0){
+                int rem=n%10;
+                if(rem!=0){
+                    roundOffNum.add(rem*(int)Math.pow(10,count));
+                }
+                count++;
+                n/=10;
+            }
+            System.out.println(roundOffNum.size());
+            for(int x:roundOffNum)System.out.print(x+" ");
+        }
+    }
+    
+}

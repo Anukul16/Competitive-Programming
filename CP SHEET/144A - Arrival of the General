@@ -1,0 +1,32 @@
+import java.util.*;
+public class Arrivalofgeneral {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)arr[i]=sc.nextInt();
+        int temp[]=arr.clone();
+        Arrays.sort(temp);
+        int minVal=temp[0],maxVal=temp[n-1];
+        boolean flag=true;
+        int minIndex=-1,maxIndex=-1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==minVal){
+                minIndex=i;
+            }
+            if(arr[i]==maxVal && flag==true){
+                maxIndex=i;
+                flag=false;
+            }
+        }
+       if(maxIndex<minIndex){
+            int minDistance=arr.length-1-minIndex;
+            int maxDistance=maxIndex-0;
+            System.out.println(minDistance+maxDistance);
+       }else{
+            int minDistance=arr.length-1-minIndex;
+            int maxDistance=maxIndex-1;
+            System.out.println(minDistance+maxDistance);
+       }
+    }
+}

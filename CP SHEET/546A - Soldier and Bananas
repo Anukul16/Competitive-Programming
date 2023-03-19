@@ -1,0 +1,11 @@
+import java.util.*;
+public class Soldier {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int k=sc.nextInt(),n=sc.nextInt(),w=sc.nextInt();
+        int price=(w*(w+1)/2)*k;
+        int borrow=price-n;
+        if(borrow>0)System.out.println(borrow);
+        else System.out.println(0);
+    }
+}

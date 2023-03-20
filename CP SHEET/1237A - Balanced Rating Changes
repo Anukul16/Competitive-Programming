@@ -1,0 +1,26 @@
+import java.util.*;
+public class Balancedrating {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n =sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)arr[i]=sc.nextInt();
+        int res[]=new int[n];
+        boolean plusMinus=false;
+        for(int i=0;i<arr.length;i++){
+            double temp=(double)arr[i]/2;
+            if(arr[i]%2==0){
+                res[i]=arr[i]/2;
+            }else{
+                if(plusMinus==false){
+                    res[i]=(int)Math.ceil(temp);
+                    plusMinus=true;
+                }else{
+                    res[i]=(int)Math.floor(temp);
+                    plusMinus=false;
+                }
+            }
+        }
+        for(int x:res)System.out.println(x);
+    }
+}

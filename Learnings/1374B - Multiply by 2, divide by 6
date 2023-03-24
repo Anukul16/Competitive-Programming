@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Multiply {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int n = sc.nextInt();
+
+            int cnt2 = 0, cnt3 = 0;
+            while (n % 2 == 0) {
+                n /= 2;
+                ++cnt2;
+            }
+            while (n % 3 == 0) {
+                n /= 3;
+                ++cnt3;
+            }
+            if (n == 1 && cnt2 <= cnt3) {
+                System.out.println(2 * cnt3 - cnt2);
+            } else {
+                System.out.println(-1);
+            }
+
+        }
+    }
+}
+/*
+
+The condition n == 1 checks if we have reached the value of 1 after performing the required operations. If we haven't reached 1, we can't obtain 1 using these operations, and the answer is -1.
+
+If we have reached the value of 1, we need to check if we have performed more 2 operations than 3 operations or not. If cnt2 is less than or equal to cnt3, then we can obtain 1 using the operations of multiplying by 2 and dividing by 6. If cnt2 is greater than cnt3, then we have performed more 2 operations than 3 operations, which means that we have to perform some more operations of dividing by 6 to reach the value of 1. But we can't perform any more operations of dividing by 6 since n is now equal to 1. In this case, it's impossible to obtain 1 using the given operations, and the answer is -1.
+
+If cnt2 is less than or equal to cnt3, we can obtain 1 using 2*cnt3 - cnt2 operations. To see why, note that we need to perform cnt3 - cnt2 operations of multiplying by 2 and then cnt3 operations of dividing by 6 to reach the value of 1. Since each operation multiplies or divides the value by 2 or 3, respectively, the net effect of performing these operations is equivalent to multiplying the initial value of n by (2 ^ (cnt3 - cnt2)) * (3 ^ cnt3). Therefore, the minimum number of operations required to reach 1 is cnt3 - cnt2 (for multiplying by 2) + cnt3 (for dividing by 6) = 2*cnt3 - cnt2.
+
+*/

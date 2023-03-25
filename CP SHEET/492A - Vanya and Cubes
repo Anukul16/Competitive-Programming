@@ -1,0 +1,16 @@
+import java.util.*;
+public class Vanya {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int ans=0,x=0,count=0;
+        while(ans<=n)
+        {
+            count++;
+            // x+=count;
+            ans+=count*(count+1)/2;
+            // System.out.println(count);
+        }
+        System.out.println(count-1);
+    }
+}

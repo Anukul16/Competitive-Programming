@@ -1,0 +1,30 @@
+import java.util.*;
+public class Panoramix {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(),m=sc.nextInt();
+        int nextPrime=-1;
+        while(true){
+            if(sieve(++n)){
+                nextPrime=n;
+                break;
+            }
+        }
+        if(m==nextPrime)System.out.println("YES");
+        else System.out.println("NO");
+    }
+    public static boolean sieve(int n){
+        boolean prime[]=new boolean[n+1];
+        Arrays.fill(prime, true);
+        prime[0]=prime[1]=false;
+        for(int i=2;i<=Math.sqrt(n);i++){
+            if(prime[i]){
+                for(int j=i*2;j<=n;j+=i){
+                    prime[j]=false;
+                }
+            }
+        }
+        if(!prime[n])return false;
+        return true;
+    }
+}
